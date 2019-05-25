@@ -11,8 +11,6 @@ import UIKit
 
 
 class MainViewController: UIViewController {
-
-
     
     var veiculo: Veiculos = .carros
     
@@ -43,7 +41,7 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "formpesquisa", sender: self)
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "formpesquisa") {
             
             if let vc: FormPesquisaViewController = segue.destination as? FormPesquisaViewController {

@@ -12,10 +12,15 @@ class FormPesquisaViewController: UIViewController {
     
     var veiculo: Veiculos = .carros
     
+    @IBOutlet weak var lblTipoVeiculo: UILabel!
+    
     var veiculos: [Veiculo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewVeiculo()
+        
+        //MainViewController.pre
+        self.lblTipoVeiculo.text = veiculo.rawValue
         
     }
     
