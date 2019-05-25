@@ -8,20 +8,17 @@
 
 import UIKit
 
-class FormPesquisaViewController: UIViewController {
+class MarcaViewController: UIViewController, UITableViewDataSource {
     
     var veiculo: Veiculos = .carros
     
-    @IBOutlet weak var lblTipoVeiculo: UILabel!
+    @IBOutlet weak var VeiculosTableView: UITableView!
     
     var veiculos: [Veiculo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewVeiculo()
-        
-        //MainViewController.pre
-        self.lblTipoVeiculo.text = veiculo.rawValue
-        
+        VeiculosTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,7 +35,7 @@ class FormPesquisaViewController: UIViewController {
         configuration.waitsForConnectivity = true
         //Criando sessao de configuracao
         let session = URLSession(configuration: configuration)
-        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)")!
+        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/marcas.json")!
         let task = session.dataTask(with: url)
         {(data, response, error) in
             
@@ -63,6 +60,7 @@ class FormPesquisaViewController: UIViewController {
                 let veiculos = try decoder.decode([Veiculo].self, from: data)
                 DispatchQueue.main.async{
                     self.veiculos = veiculos
+                    self.VeiculosTableView.reloadData()
                 }
             }catch{
                 print("Error\(error)")
@@ -72,6 +70,26 @@ class FormPesquisaViewController: UIViewController {
         }
         task.resume()
     }
+    
+    //Carregando tabela
+    
+    var selectedItem: [String] = []
+    
+    func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
+        return veiculos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId")
+        cell?.textLabel?.text = veiculos[indexPath.row].nome
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedItem = [veiculos[indexPath.row].nome]
+        performSegue(withIdentifier: "ModeloViewController", sender: nil)
+    }
+
     
     
     

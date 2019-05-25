@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "formpesquisa") {
             
-            if let vc: FormPesquisaViewController = segue.destination as? FormPesquisaViewController {
+            if let vc: MarcaViewController = segue.destination as? MarcaViewController {
                 vc.veiculo = veiculo
             }
             
