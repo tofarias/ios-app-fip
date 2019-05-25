@@ -8,17 +8,19 @@
 
 import UIKit
 
-class MarcaViewController: UIViewController, UITableViewDataSource {
+class MarcaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var veiculo: Veiculos = .carros
     
     @IBOutlet weak var VeiculosTableView: UITableView!
-    
+    var selectedItem: Veiculo?
+
     var veiculos: [Veiculo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewVeiculo()
         VeiculosTableView.dataSource = self
+        VeiculosTableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +75,6 @@ class MarcaViewController: UIViewController, UITableViewDataSource {
     
     //Carregando tabela
     
-    var selectedItem: [String] = []
     
     func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
         return veiculos.count
@@ -86,12 +87,21 @@ class MarcaViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedItem = [veiculos[indexPath.row].nome]
-        performSegue(withIdentifier: "ModeloViewController", sender: nil)
+        selectedItem = veiculos[indexPath.row]
+        performSegue(withIdentifier: "modelopesquisa", sender: nil)
     }
-
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "modelopesquisa") {
+            
+            if let vc: ModeloViewController = segue.destination as? ModeloViewController {
+                
+                vc.idModelo = selectedItem?.id
+            }
+            
+        }
+    }
     
     
 }
@@ -108,9 +118,3 @@ struct Veiculo: Codable {
         case nome = "name", fipeNome = "fipe_name", id
     }
 }
-
-
-
-
-
-
