@@ -1,29 +1,30 @@
 //
-//  AnoViewController.swift
+//  DetalheViewController.swift
 //  fipe
 //
-//  Created by IOS SENAC on 25/05/19.
+//  Created by IOS SENAC on 01/06/19.
 //  Copyright © 2019 IOS SENAC. All rights reserved.
 //
 
 import UIKit
 
-class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    var anos: [Ano] = []
+class DetalheViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var detalhes: [Detalhe] = []
     var veiculo: Veiculos = .carros
     var selectedItem: Ano?
     var idAno: String?
     var idModelo: String?
     
-   
-    @IBOutlet weak var anoTableView: UITableView!
+    
+    @IBOutlet weak var detalheTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNewModelo()
-        anoTableView.dataSource = self
-        anoTableView.delegate = self
+        detalheTableView.dataSource = self
+        detalheTableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,10 +63,10 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
             do
             {
                 let decoder = JSONDecoder()
-                let anos = try decoder.decode([Ano].self, from: data)
+                let detalhes = try decoder.decode([Detalhe].self, from: data)
                 DispatchQueue.main.async{
-                    self.anos = anos
-                    self.anoTableView.reloadData()
+                    self.detalhes = detalhes
+                    self.detalheTableView.reloadData()
                 }
             }catch{
                 print("Error\(error)")
@@ -80,46 +81,51 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     
     func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
-        return anos.count
+        return detalhes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellModelo")
-        cell?.textLabel?.text = anos[indexPath.row].nome
+        cell?.textLabel?.text = detalhes[indexPath.row].nome
         return cell!
     }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        selectedItem = detalhes[indexPath.row]
+//        performSegue(withIdentifier: "anopesquisa", sender: nil)
+//    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedItem = anos[indexPath.row]
-        performSegue(withIdentifier: "detalhepesquisa", sender: nil)
-    }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "detalhepesquisa") {
-            
-            if let vc: AnoViewController = segue.destination as? AnoViewController {
-                
-                vc.idAno = selectedItem?.id
-                vc.idModelo = idModelo
-                vc.veiculo = veiculo
-            }
-            
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "anopesquisa") {
+//
+//            if let vc: AnoViewController = segue.destination as? DetalheViewController {
+//
+//                vc.idAno = selectedItem?.id
+//                vc.idModelo = idModelo
+//                vc.veiculo = veiculo
+//            }
+//
+//        }
+//    }
     
     
 }
 
-struct Ano: Codable {
+struct Detalhe: Codable {
     let nome: String
     let veiculo: String?
     let id: String
-    
+    let ano_modelo: String?
+    let marca: String?
+    let preco: String?
+    let combustivel: String?
+    let referencia: String?
+    let fipe_codigo: String?
+    let key: String?
     
     private enum CodingKeys : String, CodingKey
     {
-        case nome = "name", veiculo = "veiculo", id
+        case nome = "name", veiculo = "veiculo", id, ano_modelo,marca, preco, combustivel, referencia, fipe_codigo, key
     }
 }
-

@@ -16,6 +16,7 @@
 		C27297662299BC0300A84FBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C27297652299BC0200A84FBE /* Default-568h@2x.png */; };
 		C27297682299C57700A84FBE /* ModeloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297672299C57700A84FBE /* ModeloViewController.swift */; };
 		C272976A2299C59B00A84FBE /* AnoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297692299C59B00A84FBE /* AnoViewController.swift */; };
+		C297BB1722A2C3A800D3A8E1 /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BB1622A2C3A800D3A8E1 /* DetalheViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C27297652299BC0200A84FBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C27297672299C57700A84FBE /* ModeloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloViewController.swift; sourceTree = "<group>"; };
 		C27297692299C59B00A84FBE /* AnoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoViewController.swift; sourceTree = "<group>"; };
+		C297BB1622A2C3A800D3A8E1 /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C27297512299824000A84FBE /* AppDelegate.swift */,
 				C27297532299824000A84FBE /* MainViewController.swift */,
 				C27297552299824000A84FBE /* Main.storyboard */,
+				C297BB1622A2C3A800D3A8E1 /* DetalheViewController.swift */,
 				C27297632299B62C00A84FBE /* MarcaViewController.swift */,
 				C27297582299824100A84FBE /* Assets.xcassets */,
 				C272975A2299824100A84FBE /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				C27297682299C57700A84FBE /* ModeloViewController.swift in Sources */,
 				C27297542299824000A84FBE /* MainViewController.swift in Sources */,
+				C297BB1722A2C3A800D3A8E1 /* DetalheViewController.swift in Sources */,
 				C272976A2299C59B00A84FBE /* AnoViewController.swift in Sources */,
 				C27297642299B62C00A84FBE /* MarcaViewController.swift in Sources */,
 				C27297522299824000A84FBE /* AppDelegate.swift in Sources */,

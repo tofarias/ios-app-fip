@@ -158,7 +158,7 @@
                     </view>
                     <connections>
                         <outlet property="modeloTableView" destination="C2k-q2-jOJ" id="VHd-XK-UuX"/>
-                        <segue destination="1aJ-uB-JrP" kind="show" id="Xkj-n1-ynx"/>
+                        <segue destination="1aJ-uB-JrP" kind="show" identifier="anopesquisa" id="Xkj-n1-ynx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-xp-0LX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,6 +176,17 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AnoTableViewCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-kx-aTp">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellAno" id="oMl-Xr-2Dg">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oMl-Xr-2Dg" id="WcJ-Kw-QGW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,10 +198,44 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ve-Hm-1ta"/>
                     </view>
+                    <connections>
+                        <outlet property="anoTableView" destination="kZi-kx-aTp" id="8I8-yV-R8Y"/>
+                        <segue destination="4ll-xK-GtD" kind="show" identifier="detalhepesquisa" id="ftY-Le-uo2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vc-Z2-zC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1319" y="1544"/>
+        </scene>
+        <!--Detalhe View Controller-->
+        <scene sceneID="KSj-e6-3WD">
+            <objects>
+                <viewController id="4ll-xK-GtD" customClass="DetalheViewController" customModule="fipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FFN-cK-at5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yZr-e0-dRu">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uO4-jf-KQt" firstAttribute="trailing" secondItem="yZr-e0-dRu" secondAttribute="trailing" id="Peo-ZV-f6h"/>
+                            <constraint firstItem="yZr-e0-dRu" firstAttribute="top" secondItem="uO4-jf-KQt" secondAttribute="top" id="Pfa-PE-Jml"/>
+                            <constraint firstItem="yZr-e0-dRu" firstAttribute="leading" secondItem="uO4-jf-KQt" secondAttribute="leading" id="Rgi-wK-S5a"/>
+                            <constraint firstItem="uO4-jf-KQt" firstAttribute="bottom" secondItem="yZr-e0-dRu" secondAttribute="bottom" id="uq4-mL-qNU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uO4-jf-KQt"/>
+                    </view>
+                    <connections>
+                        <outlet property="detalheTableView" destination="yZr-e0-dRu" id="Wtw-wy-7b8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQY-nb-B6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="2328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xWU-4z-AmR">
