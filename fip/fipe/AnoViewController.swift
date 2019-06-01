@@ -22,7 +22,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNewModelo()
+        loadNewAno()
         anoTableView.dataSource = self
         anoTableView.delegate = self
     }
@@ -32,7 +32,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     // Funcao que configura web service
-    func loadNewModelo()
+    func loadNewAno()
     {
         // Criando configuracao da sessao
         let configuration = URLSessionConfiguration.default
@@ -41,7 +41,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
         configuration.waitsForConnectivity = true
         //Criando sessao de configuracao
         let session = URLSession(configuration: configuration)
-        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idMarca!)/\(idModelo!).json")!
+        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculo/\(idMarca!)/\(idModelo!).json")!
 
         let task = session.dataTask(with: url)
         {(data, response, error) in
@@ -86,7 +86,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellModelo")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellAno")
         cell?.textLabel?.text = anos[indexPath.row].nome
         return cell!
     }
@@ -100,10 +100,11 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detalhepesquisa") {
             
-            if let vc: AnoViewController = segue.destination as? AnoViewController {
+            if let vc: DetalheViewController = segue.destination as? DetalheViewController {
                 
                 vc.idAno = selectedItem?.id
                 vc.idMarca = idMarca
+                vc.idModelo = idModelo
                 vc.veiculo = veiculo
             }
             

@@ -99,7 +99,7 @@ class ModeloViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "anopesquisa") {
 
-            if let vc: ModeloViewController = segue.destination as? ModeloViewController {
+            if let vc: AnoViewController = segue.destination as? AnoViewController {
 
                 vc.idModelo = selectedItem?.id
                 vc.idMarca = idMarca

@@ -8,23 +8,26 @@
 
 import UIKit
 
-class DetalheViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetalheViewController: UIViewController {
 
-    var detalhes: [Detalhe] = []
+    var detalhes: Detalhe?
     var veiculo: Veiculos = .carros
-    var selectedItem: Ano?
+//    var selectedItem: Ano?
     var idAno: String?
     var idModelo: String?
+    var idMarca: String?
     
     
-    @IBOutlet weak var detalheTableView: UITableView!
+    @IBOutlet weak var lMarca: UILabel!
+    @IBOutlet weak var lModelo: UILabel!
+    @IBOutlet weak var lAno: UILabel!
+    @IBOutlet weak var lValor: UILabel!
+    @IBOutlet weak var lReferencia: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNewModelo()
-        detalheTableView.dataSource = self
-        detalheTableView.delegate = self
+        loadNewDetalhe()
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,7 +35,7 @@ class DetalheViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     // Funcao que configura web service
-    func loadNewModelo()
+    func loadNewDetalhe()
     {
         // Criando configuracao da sessao
         let configuration = URLSessionConfiguration.default
@@ -41,7 +44,7 @@ class DetalheViewController: UIViewController, UITableViewDataSource, UITableVie
         configuration.waitsForConnectivity = true
         //Criando sessao de configuracao
         let session = URLSession(configuration: configuration)
-        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idModelo!)/\(idAno!).json")!
+        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculo/\(idMarca!)/\(idModelo!)/\(idAno!).json")!
         let task = session.dataTask(with: url)
         {(data, response, error) in
             
@@ -63,32 +66,52 @@ class DetalheViewController: UIViewController, UITableViewDataSource, UITableVie
             do
             {
                 let decoder = JSONDecoder()
-                let detalhes = try decoder.decode([Detalhe].self, from: data)
+                let detalhes = try decoder.decode(Detalhe.self, from: data)
                 DispatchQueue.main.async{
                     self.detalhes = detalhes
-                    self.detalheTableView.reloadData()
+                    
+                    self.lMarca.text = self.detalhes?.marca
+                    self.lModelo.text = self.detalhes?.veiculo
+                    self.lAno.text = self.detalhes?.ano_modelo
+                    self.lValor.text = self.detalhes?.preco
+                    self.lReferencia.text = self.detalhes?.referencia
                 }
             }catch{
                 print("Error\(error)")
             }
             
+           
+           
             
         }
         task.resume()
     }
     
-    //Carregando tabela
+    // Carregando dados na Label
+    
+   
     
     
-    func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
-        return detalhes.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellModelo")
-        cell?.textLabel?.text = detalhes[indexPath.row].nome
-        return cell!
-    }
+    
+//Carregando tabela
+    
+//    func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
+//        return detalhes.count
+//    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe")
+//        cell?.textLabel?.text = detalhes[indexPath.row].referencia
+//        cell?.textLabel?.text = detalhes[indexPath.row].nome
+//        cell?.textLabel?.text = detalhes[indexPath.row].marca
+//        cell?.textLabel?.text = detalhes[indexPath.row].ano_modelo
+//        cell?.textLabel?.text = detalhes[indexPath.row].combustivel
+//        cell?.textLabel?.text = detalhes[indexPath.row].preco
+//        cell?.textLabel?.text = detalhes[indexPath.row].fipe_codigo
+//
+//        return cell!
+//    }
 //
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        selectedItem = detalhes[indexPath.row]
