@@ -97,7 +97,8 @@ class MarcaViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             if let vc: ModeloViewController = segue.destination as? ModeloViewController {
                 
-                vc.idModelo = selectedItem?.id
+                vc.idModelo = selectedItem?.id.description
+                vc.veiculo = veiculo
             }
             
         }
