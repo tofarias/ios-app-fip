@@ -13,6 +13,7 @@ class ModeloViewController: UIViewController, UITableViewDataSource, UITableView
     var modelos:  [Modelo] = []
     var veiculo: Veiculos = .carros
     var selectedItem: Modelo?
+    var idMarca: String?
     var idModelo: String?
     
     @IBOutlet weak var modeloTableView: UITableView!
@@ -40,7 +41,7 @@ class ModeloViewController: UIViewController, UITableViewDataSource, UITableView
         configuration.waitsForConnectivity = true
         //Criando sessao de configuracao
         let session = URLSession(configuration: configuration)
-        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idModelo!).json")!
+        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idMarca!).json")!
         let task = session.dataTask(with: url)
         {(data, response, error) in
 
@@ -101,6 +102,8 @@ class ModeloViewController: UIViewController, UITableViewDataSource, UITableView
             if let vc: ModeloViewController = segue.destination as? ModeloViewController {
 
                 vc.idModelo = selectedItem?.id
+                vc.idMarca = idMarca
+                vc.veiculo = veiculo
             }
 
         }

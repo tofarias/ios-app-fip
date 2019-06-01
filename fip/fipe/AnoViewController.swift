@@ -14,6 +14,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var veiculo: Veiculos = .carros
     var selectedItem: Ano?
     var idAno: String?
+    var idMarca: String?
     var idModelo: String?
     
    
@@ -40,7 +41,8 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
         configuration.waitsForConnectivity = true
         //Criando sessao de configuracao
         let session = URLSession(configuration: configuration)
-        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idModelo!)/\(idAno!).json")!
+        let url = URL(string: "http://fipeapi.appspot.com/api/1/\(veiculo.rawValue)/veiculos/\(idMarca!)/\(idModelo!).json")!
+
         let task = session.dataTask(with: url)
         {(data, response, error) in
             
@@ -101,7 +103,7 @@ class AnoViewController: UIViewController, UITableViewDataSource, UITableViewDel
             if let vc: AnoViewController = segue.destination as? AnoViewController {
                 
                 vc.idAno = selectedItem?.id
-                vc.idModelo = idModelo
+                vc.idMarca = idMarca
                 vc.veiculo = veiculo
             }
             
