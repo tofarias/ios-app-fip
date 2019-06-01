@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="VeiculoEntity" representedClassName="VeiculoEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="ano_modelo" optional="YES" syncable="YES"/>
+        <attribute name="combustivel" optional="YES" syncable="YES"/>
+        <attribute name="fipe_codigo" optional="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" syncable="YES"/>
+        <attribute name="marca" optional="YES" syncable="YES"/>
+        <attribute name="preco" optional="YES" syncable="YES"/>
+        <attribute name="referencia" optional="YES" syncable="YES"/>
+        <attribute name="veiculo" optional="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="VeiculoEntity" positionX="-4455" positionY="-13194" width="128" height="163"/>
+    </elements>
+</model>

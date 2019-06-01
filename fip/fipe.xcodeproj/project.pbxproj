@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2494C0422A2BE130050C09A /* fipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2494C0222A2BE130050C09A /* fipeModel.xcdatamodeld */; };
 		C27297522299824000A84FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297512299824000A84FBE /* AppDelegate.swift */; };
 		C27297542299824000A84FBE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297532299824000A84FBE /* MainViewController.swift */; };
 		C27297572299824000A84FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27297552299824000A84FBE /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2494C0322A2BE130050C09A /* VeiculoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VeiculoModel.xcdatamodel; sourceTree = "<group>"; };
 		C272974E2299824000A84FBE /* fipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27297512299824000A84FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27297532299824000A84FBE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C27297512299824000A84FBE /* AppDelegate.swift */,
+				C2494C0222A2BE130050C09A /* fipeModel.xcdatamodeld */,
 				C27297532299824000A84FBE /* MainViewController.swift */,
 				C27297552299824000A84FBE /* Main.storyboard */,
 				C27297632299B62C00A84FBE /* MarcaViewController.swift */,
@@ -153,6 +156,7 @@
 				C272976A2299C59B00A84FBE /* AnoViewController.swift in Sources */,
 				C27297642299B62C00A84FBE /* MarcaViewController.swift in Sources */,
 				C27297522299824000A84FBE /* AppDelegate.swift in Sources */,
+				C2494C0422A2BE130050C09A /* fipeModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +352,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C2494C0222A2BE130050C09A /* fipeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C2494C0322A2BE130050C09A /* VeiculoModel.xcdatamodel */,
+			);
+			currentVersion = C2494C0322A2BE130050C09A /* VeiculoModel.xcdatamodel */;
+			path = fipeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C27297462299824000A84FBE /* Project object */;
 }
