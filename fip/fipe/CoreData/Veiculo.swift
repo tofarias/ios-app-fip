@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 public class Veivulo: NSManagedObject{
-    /*
-    class func createWith(titulo: String, editora: String?, ano: Int16?, in context: NSManagedObjectContext) -> Livro? {
-        let request = NSFetchRequest<Livro>(entityName: "Livro")
+    
+    class func createWith(titulo: String, editora: String?, ano: Int16?, in context: NSManagedObjectContext) -> Veiculo? {
+        let request = NSFetchRequest<Veiculo>(entityName: "VeiculoEntity")
         let query = "titulo == %@"
         let params = [ titulo ]
         
@@ -23,7 +23,7 @@ public class Veivulo: NSManagedObject{
             return livro
         }
         // senao cria o livro
-        if let livro = NSEntityDescription.insertNewObject(forEntityName: "Livro", into: context) as? Livro {
+        if let livro = NSEntityDescription.insertNewObject(forEntityName: "VeiculoEntity", into: context) as? Livro {
             livro.titulo = titulo
             livro.editora = editora
             livro.ano = ano ?? 0
@@ -31,5 +31,5 @@ public class Veivulo: NSManagedObject{
         }
         // em caso de erro...
         return nil
-    }*/
+    }
 }
