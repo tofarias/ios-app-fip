@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="VeiculoEntity" representedClassName=".VeiculoEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="ano_modelo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="combustivel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fipe_codigo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marca" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preco" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="veiculo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="VeiculoEntity" positionX="-63" positionY="-18" width="128" height="208"/>
+    </elements>
+</model>

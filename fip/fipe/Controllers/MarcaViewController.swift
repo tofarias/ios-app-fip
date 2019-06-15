@@ -113,7 +113,6 @@ struct Veiculo: Codable {
     let fipeNome: String?
     let id: Int
     
-    
     private enum CodingKeys : String, CodingKey
     {
         case nome = "name", fipeNome = "fipe_name", id

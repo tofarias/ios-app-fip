@@ -16,6 +16,9 @@
 		C27297662299BC0300A84FBE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C27297652299BC0200A84FBE /* Default-568h@2x.png */; };
 		C27297682299C57700A84FBE /* ModeloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297672299C57700A84FBE /* ModeloViewController.swift */; };
 		C272976A2299C59B00A84FBE /* AnoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27297692299C59B00A84FBE /* AnoViewController.swift */; };
+		C28E7BF222B524590048D738 /* VeiculoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C28E7BF022B524590048D738 /* VeiculoModel.xcdatamodeld */; };
+		C28E7BF522B526460048D738 /* VeiculoManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E7BF422B526460048D738 /* VeiculoManagedObject.swift */; };
+		C28E7BF722B526AC0048D738 /* CoreDataListaFavTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E7BF622B526AC0048D738 /* CoreDataListaFavTableViewController.swift */; };
 		C297BB1722A2C3A800D3A8E1 /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BB1622A2C3A800D3A8E1 /* DetalheViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		C27297652299BC0200A84FBE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C27297672299C57700A84FBE /* ModeloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloViewController.swift; sourceTree = "<group>"; };
 		C27297692299C59B00A84FBE /* AnoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoViewController.swift; sourceTree = "<group>"; };
+		C28E7BF122B524590048D738 /* VeiculoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VeiculoModel.xcdatamodel; sourceTree = "<group>"; };
+		C28E7BF422B526460048D738 /* VeiculoManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeiculoManagedObject.swift; sourceTree = "<group>"; };
+		C28E7BF622B526AC0048D738 /* CoreDataListaFavTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataListaFavTableViewController.swift; sourceTree = "<group>"; };
 		C297BB1622A2C3A800D3A8E1 /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +66,9 @@
 		C2494C1522A30B1E0050C09A /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				C28E7BF022B524590048D738 /* VeiculoModel.xcdatamodeld */,
+				C28E7BF422B526460048D738 /* VeiculoManagedObject.swift */,
+				C28E7BF622B526AC0048D738 /* CoreDataListaFavTableViewController.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -84,6 +93,7 @@
 		C27297502299824000A84FBE /* fipe */ = {
 			isa = PBXGroup;
 			children = (
+				C28E7BF322B5257B0048D738 /* New Group */,
 				C2494C1522A30B1E0050C09A /* Core Data */,
 				C2494C1422A30AF60050C09A /* Controllers */,
 				C27297512299824000A84FBE /* AppDelegate.swift */,
@@ -93,6 +103,13 @@
 				C272975D2299824100A84FBE /* Info.plist */,
 			);
 			path = fipe;
+			sourceTree = "<group>";
+		};
+		C28E7BF322B5257B0048D738 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,12 +184,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28E7BF222B524590048D738 /* VeiculoModel.xcdatamodeld in Sources */,
+				C28E7BF722B526AC0048D738 /* CoreDataListaFavTableViewController.swift in Sources */,
 				C27297682299C57700A84FBE /* ModeloViewController.swift in Sources */,
 				C27297542299824000A84FBE /* MainViewController.swift in Sources */,
 				C297BB1722A2C3A800D3A8E1 /* DetalheViewController.swift in Sources */,
 				C272976A2299C59B00A84FBE /* AnoViewController.swift in Sources */,
 				C27297642299B62C00A84FBE /* MarcaViewController.swift in Sources */,
 				C27297522299824000A84FBE /* AppDelegate.swift in Sources */,
+				C28E7BF522B526460048D738 /* VeiculoManagedObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +388,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C28E7BF022B524590048D738 /* VeiculoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C28E7BF122B524590048D738 /* VeiculoModel.xcdatamodel */,
+			);
+			currentVersion = C28E7BF122B524590048D738 /* VeiculoModel.xcdatamodel */;
+			path = VeiculoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C27297462299824000A84FBE /* Project object */;
 }

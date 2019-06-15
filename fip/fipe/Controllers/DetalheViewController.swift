@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetalheViewController: UIViewController {
 
@@ -24,6 +25,50 @@ class DetalheViewController: UIViewController {
     @IBOutlet weak var lValor: UILabel!
     @IBOutlet weak var lReferencia: UILabel!
     
+    @IBAction func salvarPesquisa(_ sender: Any) {
+        
+        // Se existe um contexto gerenciado...
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if let context = appDelegate?.persistentContainer.viewContext {
+            // ou atualiza o veiculo existente...
+            
+                // ou, se o usuario digitou um titulo, cria um livro...
+                let marca =  lMarca.text
+                let modelo = lModelo.text
+                let ano = lAno.text
+                let valor = lValor.text
+                let referencia = lReferencia.text
+                
+                let veiculo = VeiculoEntity.createWith(
+                    marca: marca,
+                    veiculo: "",
+                    id: idMarca,
+                    ano_modelo: ano,
+                    preco: valor,
+                    combustivel: "",
+                    referencia: referencia,
+                    fipe_codigo: "",
+                    key: "",
+                    nome: "nome",
+                    in: context
+            )
+            print(veiculo)
+            
+        
+            // ao final, salva as alteracoes do documento.
+            do {
+                try context.save()
+            } catch let error {
+                print("\(error)")
+            }
+        }
+        // retorna a tela anterior
+        //_ = navigationController?.popViewController(animated: true)
+        
+        
+        self.navigationController?.popToRootViewController(animated: true)
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
