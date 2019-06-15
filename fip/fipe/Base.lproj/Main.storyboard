@@ -362,12 +362,27 @@
                         </prototypes>
                     </tableView>
                     <connections>
-                        <segue destination="4ll-xK-GtD" kind="show" identifier="verfavorito" id="R7m-vy-DnR"/>
+                        <segue destination="x98-cO-H1H" kind="show" identifier="comparaveiculos" id="tJB-G0-hDW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHv-9V-tBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="843"/>
+            <point key="canvasLocation" x="1788" y="827"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RTB-t8-oDq">
+            <objects>
+                <viewController id="x98-cO-H1H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qev-LC-IyC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0jn-24-pZP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35j-vS-VNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="1714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xWU-4z-AmR">
@@ -388,7 +403,4 @@
             <point key="canvasLocation" x="-438" y="41"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="R7m-vy-DnR"/>
-    </inferredMetricsTieBreakers>
 </document>

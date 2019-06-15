@@ -17,7 +17,7 @@ class DetalheViewController: UIViewController {
     var idAno: String?
     var idModelo: String?
     var idMarca: String?
-    
+    var id: String?
     
     @IBOutlet weak var lMarca: UILabel!
     @IBOutlet weak var lModelo: UILabel!

@@ -67,10 +67,7 @@ class CoreDataListaFavTableViewController: UITableViewController
             
             if let vc: DetalheViewController = segue.destination as? DetalheViewController {
                 
-                vc.idAno = selectedItem?.id
-                vc.idMarca = idMarca
-                vc.idModelo = idModelo
-                vc.veiculo = veiculo
+                vc.id = selectedItem?.id
             }
             
         }
